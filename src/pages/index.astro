@@ -1,16 +1,324 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import FeaturePPDB from "../components/FeaturePPDB.astro";
 
+import ProductCards from "../components/ProductCards.astro";
+import SchoolCards from "../components/SchoolCards.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Solusi Website Sekolah & PPDB Online Terintegrasi">
+    <Navbar />
+    <main>
+        <Hero />
+
+        <!-- Problems Section -->
+        <section
+            class="py-24 bg-linear-to-b from-white to-slate-50 relative overflow-hidden"
+        >
+            <!-- Background Decorations -->
+            <div
+                class="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-slate-200 to-transparent"
+            >
+            </div>
+
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span
+                        class="inline-block py-1.5 px-4 mb-6 text-sm font-semibold tracking-wider text-red-600 uppercase bg-red-50 border border-red-100 rounded-full"
+                    >
+                        Tantangan Umum
+                    </span>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold mb-6 text-slate-900"
+                    >
+                        Masalah yang Sering Dihadapi
+                        <span
+                            class="bg-linear-to-r from-red-500 to-orange-500 bg-clip-text text-transparent"
+                        >
+                            Pimpinan Sekolah</span
+                        >
+                    </h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        Sistem lama yang manual dan mahal seringkali menjadi
+                        penghambat kemajuan institusi pendidikan di era digital.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Problem Card 1 -->
+                    <div
+                        class="group relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:border-red-100 hover:-translate-y-2 transition-all duration-500"
+                    >
+                        <div
+                            class="absolute -top-4 -left-4 w-16 h-16 bg-linear-to-br from-red-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/25 group-hover:scale-110 transition-transform duration-300"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div class="pt-8">
+                            <span
+                                class="text-xs font-bold text-red-500 tracking-wider"
+                                >MASALAH #1</span
+                            >
+                            <h3
+                                class="text-xl font-bold mt-2 mb-4 text-slate-900"
+                            >
+                                Administrasi Berantakan
+                            </h3>
+                            <p class="text-slate-500 leading-relaxed">
+                                Data pendaftar manual sulit dipantau, rawan
+                                kesalahan input, dan membuang waktu panitia yang
+                                berharga.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Problem Card 2 -->
+                    <div
+                        class="group relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:border-amber-100 hover:-translate-y-2 transition-all duration-500"
+                    >
+                        <div
+                            class="absolute -top-4 -left-4 w-16 h-16 bg-linear-to-br from-amber-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-500/25 group-hover:scale-110 transition-transform duration-300"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div class="pt-8">
+                            <span
+                                class="text-xs font-bold text-amber-500 tracking-wider"
+                                >MASALAH #2</span
+                            >
+                            <h3
+                                class="text-xl font-bold mt-2 mb-4 text-slate-900"
+                            >
+                                Biaya Berulang
+                            </h3>
+                            <p class="text-slate-500 leading-relaxed">
+                                Sistem langganan yang membebani anggaran
+                                operasional sekolah setiap bulan atau setiap
+                                tahun.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Problem Card 3 -->
+                    <div
+                        class="group relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:border-purple-100 hover:-translate-y-2 transition-all duration-500"
+                    >
+                        <div
+                            class="absolute -top-4 -left-4 w-16 h-16 bg-linear-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:scale-110 transition-transform duration-300"
+                        >
+                            <svg
+                                class="w-8 h-8 text-white"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div class="pt-8">
+                            <span
+                                class="text-xs font-bold text-purple-500 tracking-wider"
+                                >MASALAH #3</span
+                            >
+                            <h3
+                                class="text-xl font-bold mt-2 mb-4 text-slate-900"
+                            >
+                                Citra Kurang Profesional
+                            </h3>
+                            <p class="text-slate-500 leading-relaxed">
+                                Orang tua siswa menilai kualitas sekolah dari
+                                kemudahan akses informasi dan tampilan
+                                digitalnya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Banner -->
+                <div class="mt-16 relative">
+                    <div
+                        class="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-600 rounded-3xl transform rotate-1"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-linear-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-white overflow-hidden"
+                    >
+                        <div
+                            class="absolute right-0 top-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"
+                        >
+                        </div>
+                        <div
+                            class="absolute left-0 bottom-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"
+                        >
+                        </div>
+
+                        <div
+                            class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8"
+                        >
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-2">
+                                    Saatnya Beralih ke Sistem Modern!
+                                </h3>
+                                <p class="text-blue-100">
+                                    Kami hadir dengan solusi yang menjawab semua
+                                    permasalahan di atas.
+                                </p>
+                            </div>
+                            <a
+                                href="#produk"
+                                class="shrink-0 px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                            >
+                                Lihat Solusi Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <ProductCards />
+        <FeaturePPDB />
+        <SchoolCards />
+
+        <!-- CTA Section -->
+        <section class="relative py-24 overflow-hidden">
+            <!-- Background -->
+            <div
+                class="absolute inset-0 bg-linear-to-br from-blue-600 via-indigo-600 to-purple-700"
+            >
+            </div>
+
+            <!-- Pattern Overlay -->
+            <div class="absolute inset-0 opacity-10">
+                <div
+                    class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[40px_40px]"
+                >
+                </div>
+            </div>
+
+            <!-- Floating Shapes -->
+            <div
+                class="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-10 right-10 w-48 h-48 bg-purple-400/20 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl"
+            >
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <span
+                        class="inline-block py-2 px-4 mb-8 text-sm font-semibold tracking-wider text-white/90 uppercase bg-white/10 border border-white/20 rounded-full backdrop-blur-sm"
+                    >
+                        Mulai Sekarang
+                    </span>
+
+                    <h2
+                        class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+                    >
+                        Siap Digitalisasi
+                        <br />
+                        Sekolah Anda?
+                    </h2>
+
+                    <p class="text-lg text-blue-100 mb-10 max-w-2xl mx-auto">
+                        Konsultasikan kebutuhan sekolah Anda secara gratis
+                        bersama tim kami. Dapatkan solusi terbaik yang sesuai
+                        dengan anggaran dan kebutuhan institusi.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a
+                            href="https://wa.link/pw418p"
+                            class="group px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                                ></path>
+                            </svg>
+                            Konsultasi via WhatsApp
+                        </a>
+                        <a
+                            href="https://wa.link/pw418p"
+                            class="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm"
+                        >
+                            Jadwalkan Demo
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="mt-16 pt-10 border-t border-white/10">
+                        <p class="text-sm text-blue-200 mb-6">
+                            Dipercaya oleh sekolah di seluruh Indonesia
+                        </p>
+                        <div
+                            class="flex flex-wrap justify-center items-center gap-8 opacity-60"
+                        >
+                            <div class="text-white font-bold text-lg">
+                                SMP Negeri 1
+                            </div>
+                            <div class="w-px h-6 bg-white/30 hidden sm:block">
+                            </div>
+                            <div class="text-white font-bold text-lg">
+                                SMA Unggulan
+                            </div>
+                            <div class="w-px h-6 bg-white/30 hidden sm:block">
+                            </div>
+                            <div class="text-white font-bold text-lg">
+                                SMK Teknologi
+                            </div>
+                            <div class="w-px h-6 bg-white/30 hidden sm:block">
+                            </div>
+                            <div class="text-white font-bold text-lg">
+                                +100 Lainnya
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>

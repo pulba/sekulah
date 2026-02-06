@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../src/assets/logo-sekulah.png";
+---
+
+<nav
+    class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100"
+    id="navbar"
+>
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 sm:gap-3">
+                <div
+                    class="w-12 h-12 sm:w-10 sm:h-10 md:w-12 md:h-12 shrink-0"
+                >
+                    <Image
+                        src={logo}
+                        alt="Logo Sekulah"
+                        class="w-full h-full object-contain"
+                    />
+                </div>
+
+                <span
+                    class="font-bold text-xl md:text-xl text-slate-900 leading-none"
+                >
+                    Sekulah<span class="text-blue-600 text-sm">.digital</span>
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a
+                    href="#produk"
+                    class="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                    >Produk</a
+                >
+                <a
+                    href="#ppdb"
+                    class="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                    >PPDB</a
+                >
+                <a
+                    href="#pricing"
+                    class="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                    >Harga</a
+                >
+                <a
+                    href="#demo"
+                    class="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                    >Demo</a
+                >
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <a
+                    href="https://wa.link/pw418p"
+                    class="px-5 py-2.5 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-600/25 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                    Konsultasi Gratis
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+                class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                id="mobile-menu-btn"
+            >
+                <svg
+                    class="w-6 h-6 text-slate-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden pb-4" id="mobile-menu">
+            <div class="flex flex-col gap-3 pt-3 border-t border-slate-100">
+                <a
+                    href="#produk"
+                    class="px-4 py-2 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
+                    >Produk</a
+                >
+                <a
+                    href="#ppdb"
+                    class="px-4 py-2 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
+                    >PPDB</a
+                >
+                <a
+                    href="#pricing"
+                    class="px-4 py-2 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
+                    >Harga</a
+                >
+                <a
+                    href="#demo"
+                    class="px-4 py-2 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all"
+                    >Demo</a
+                >
+                <a
+                    href="#quote"
+                    class="px-4 py-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl text-center mt-2"
+                >
+                    Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+
+    // Navbar scroll effect
+    window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+            navbar?.classList.add("shadow-sm");
+        } else {
+            navbar?.classList.remove("shadow-sm");
+        }
+    });
+</script>

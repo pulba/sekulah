@@ -1,0 +1,93 @@
+---
+const categories = [
+  {
+    level: "SMP",
+    target: "Sekolah Menengah Pertama",
+    focus: "Kemudahan & Transisi",
+    features: [
+      "PPDB Jalur Zonasi & Prestasi",
+      "Profil Kegiatan Ekstrakurikuler",
+      "Papan Pengumuman Digital",
+      "Galeri Kegiatan Siswa",
+      "Halaman Profil Guru & Staff"
+    ],
+    accent: "border-emerald-200 bg-emerald-50 text-emerald-700",
+    button: "bg-emerald-600 hover:bg-emerald-700"
+  },
+  {
+    level: "SMA",
+    target: "Sekolah Menengah Atas",
+    focus: "Prestasi & Akademik",
+    features: [
+      "PPDB Jalur Undangan & Ujian",
+      "Database Alumni & PTN",
+      "E-Library & Sumber Belajar",
+      "Integrasi Nilai Rapor Online",
+      "Blog Prestasi Siswa/Guru"
+    ],
+    accent: "border-blue-200 bg-blue-50 text-blue-700",
+    button: "bg-blue-600 hover:bg-blue-700"
+  },
+  {
+    level: "SMK",
+    target: "Sekolah Menengah Kejuruan",
+    focus: "Jurusan & Industri",
+    features: [
+      "PPDB Berbasis Kompetensi Keahlian",
+      "Manajemen Data Prakerin/PKL",
+      "Etalase Produk Kreatif Siswa",
+      "Portal Kerjasama Dunia Industri",
+      "Update Lowongan Kerja (BKK)"
+    ],
+    accent: "border-purple-200 bg-purple-50 text-purple-700",
+    button: "bg-purple-600 hover:bg-purple-700"
+  }
+];
+---
+
+<section id="jenjang" class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-4xl font-bold mb-4">Satu Sistem, Berbagai Jenjang</h2>
+      <p class="text-slate-600 text-lg">Konfigurasi sistem yang disesuaikan dengan kebutuhan spesifik masing-masing tingkat pendidikan.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      {categories.map((item) => (
+        <div class="flex flex-col border border-slate-200 rounded-3xl overflow-hidden transition-all hover:shadow-2xl hover:border-transparent group">
+          <div class={`p-8 border-b ${item.accent}`}>
+            <span class="font-bold tracking-widest uppercase text-sm opacity-80">{item.focus}</span>
+            <h3 class="text-4xl font-black mt-2">{item.level}</h3>
+            <p class="mt-1 font-medium">{item.target}</p>
+          </div>
+          
+          <div class="p-8 bg-white grow">
+            <p class="text-sm font-bold text-slate-400 uppercase mb-4 tracking-wider">Fitur Khusus:</p>
+            <ul class="space-y-4">
+              {item.features.map((feature) => (
+                <li class="flex items-start gap-3 text-slate-700">
+                  <svg class="w-5 h-5 mt-0.5 text-slate-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span class="text-sm font-medium">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="p-8 bg-slate-50 border-t border-slate-100">
+            <button class={`w-full py-3 rounded-xl text-white font-bold transition-transform active:scale-95 ${item.button}`}>
+              Pilih Paket {item.level}
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center p-6 bg-slate-900 rounded-2xl text-white">
+      <p class="text-slate-300">Butuh kustomisasi di luar fitur standar? 
+        <a href="#" class="text-blue-400 font-bold ml-2 hover:underline">Hubungi Tim Teknis Kami &rarr;</a>
+      </p>
+    </div>
+  </div>
+</section>

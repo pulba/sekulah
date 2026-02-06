@@ -1,0 +1,96 @@
+---
+const products = [
+  {
+    title: "Website Profil Publik",
+    desc: "Wajah digital sekolah yang modern untuk meningkatkan kepercayaan orang tua siswa.",
+    features: ["Desain Responsif (HP/Laptop)", "Informasi Berita & Agenda", "Galeri Prestasi & Fasilitas", "Integrasi Media Sosial"],
+    icon: "globe",
+    tag: "Branding",
+    gradient: "from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Sistem PPDB Terintegrasi",
+    desc: "Sistem pendaftaran mandiri yang bekerja 24 jam tanpa perlu panitia standby.",
+    features: ["Formulir Custom", "Upload Dokumen Digital", "Sistem Seleksi Otomatis", "Cetak Kartu Ujian/Daftar"],
+    icon: "clipboard",
+    tag: "Operasional",
+    gradient: "from-indigo-500 to-purple-500"
+  },
+  {
+    title: "Panel Admin (Dashboard)",
+    desc: "Pusat kendali sekolah untuk memantau data pendaftar dan konten website.",
+    features: ["Eksport Data Dapodik", "Manajemen User/Operator", "Statistik Pendaftar Real-time", "Keamanan Data Terenkripsi"],
+    icon: "chart",
+    tag: "Manajemen",
+    gradient: "from-emerald-500 to-teal-500"
+  }
+];
+
+const icons = {
+  globe: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`,
+  clipboard: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>`,
+  chart: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>`
+};
+---
+
+<section id="produk" class="py-16 bg-linear-to-b from-slate-50 to-white relative overflow-hidden">
+  <!-- Background Decorations -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-blue-100/50 to-purple-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-linear-to-br from-emerald-100/50 to-cyan-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <span class="inline-block py-1.5 px-4 mb-6 text-sm font-semibold tracking-wider text-blue-600 uppercase bg-blue-50 border border-blue-100 rounded-full">
+        Produk Kami
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
+        Solusi Lengkap dalam 
+        <span class="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Satu Paket</span>
+      </h2>
+      <p class="text-slate-600 text-lg leading-relaxed">
+        Anda tidak perlu membeli sistem terpisah. Semua modul ini sudah termasuk dalam satu kali investasi.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {products.map((item, index) => (
+        <div class="group relative">
+          <!-- Card Glow Effect -->
+          <div class={`absolute -inset-0.5 bg-linear-to-r ${item.gradient} rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500`}></div>
+          
+          <div class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+            <!-- Icon -->
+            <div class={`w-16 h-16 mb-6 bg-linear-to-br ${item.gradient} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+              <Fragment set:html={icons[item.icon]} />
+            </div>
+            
+            <!-- Tag -->
+            <span class={`inline-block self-start text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4 bg-linear-to-r ${item.gradient} text-white`}>
+              {item.tag}
+            </span>
+            
+            <!-- Content -->
+            <h3 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">{item.title}</h3>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed grow">
+              {item.desc}
+            </p>
+            
+            <!-- Features -->
+            <ul class="space-y-3 border-t border-slate-100 pt-6">
+              {item.features.map((feature) => (
+                <li class="flex items-start gap-3 text-sm text-slate-700">
+                  <div class={`w-5 h-5 rounded-full bg-linear-to-r ${item.gradient} flex items-center justify-center shrink-0 mt-0.5`}>
+                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
