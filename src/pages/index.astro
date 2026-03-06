@@ -2,14 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
-import FeaturePPDB from "../components/FeaturePPDB.astro";
+import FeatureSPMB from "../components/FeatureSPMB.astro";
+import Price from "../components/Price.astro";
 
 import ProductCards from "../components/ProductCards.astro";
 import SchoolCards from "../components/SchoolCards.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Solusi Website Sekolah & PPDB Online Terintegrasi">
+<Layout title="Solusi Website Sekolah & SPMB Online Terintegrasi">
     <Navbar />
     <main>
         <Hero />
@@ -208,9 +209,10 @@ import Footer from "../components/Footer.astro";
             </div>
         </section>
 
-        <ProductCards />
-        <FeaturePPDB />
         <SchoolCards />
+        <ProductCards />
+        <FeatureSPMB />
+        <Price />
 
         <!-- CTA Section -->
         <section class="relative py-24 overflow-hidden">

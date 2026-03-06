@@ -9,7 +9,7 @@ const products = [
     gradient: "from-blue-500 to-cyan-500"
   },
   {
-    title: "Sistem PPDB Terintegrasi",
+    title: "Sistem SPMB Terintegrasi",
     desc: "Sistem pendaftaran mandiri yang bekerja 24 jam tanpa perlu panitia standby.",
     features: ["Formulir Custom", "Upload Dokumen Digital", "Sistem Seleksi Otomatis", "Cetak Kartu Ujian/Daftar"],
     icon: "clipboard",
@@ -40,9 +40,6 @@ const icons = {
   
   <div class="container mx-auto px-6 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-20">
-      <span class="inline-block py-1.5 px-4 mb-6 text-sm font-semibold tracking-wider text-blue-600 uppercase bg-blue-50 border border-blue-100 rounded-full">
-        Produk Kami
-      </span>
       <h2 class="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
         Solusi Lengkap dalam 
         <span class="bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Satu Paket</span>
@@ -61,7 +58,7 @@ const icons = {
           <div class="relative bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
             <!-- Icon -->
             <div class={`w-16 h-16 mb-6 bg-linear-to-br ${item.gradient} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
-              <Fragment set:html={icons[item.icon]} />
+              <Fragment set:html={icons[item.icon as keyof typeof icons]} />
             </div>
             
             <!-- Tag -->
