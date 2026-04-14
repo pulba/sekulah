@@ -14,7 +14,7 @@ const products = [
     features: ["Formulir Custom", "Upload Dokumen Digital", "Sistem Seleksi Otomatis", "Cetak Kartu Ujian/Daftar"],
     icon: "clipboard",
     tag: "Operasional",
-    gradient: "from-indigo-500 to-purple-500"
+    gradient: "from-indigo-500 to-blue-600"
   },
   {
     title: "Panel Admin (Dashboard)",
@@ -22,7 +22,7 @@ const products = [
     features: ["Eksport Data Dapodik", "Manajemen User/Operator", "Statistik Pendaftar Real-time", "Keamanan Data Terenkripsi"],
     icon: "chart",
     tag: "Manajemen",
-    gradient: "from-emerald-500 to-teal-500"
+    gradient: "from-blue-400 to-cyan-500"
   }
 ];
 
@@ -35,8 +35,8 @@ const icons = {
 
 <section id="produk" class="py-16 bg-linear-to-b from-slate-50 to-white relative overflow-hidden">
   <!-- Background Decorations -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-blue-100/50 to-purple-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-  <div class="absolute bottom-0 left-0 w-80 h-80 bg-linear-to-br from-emerald-100/50 to-cyan-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-blue-100/50 to-indigo-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-linear-to-br from-cyan-100/50 to-blue-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
   
   <div class="container mx-auto px-6 relative z-10">
     <div class="text-center max-w-3xl mx-auto mb-20">
@@ -49,9 +49,9 @@ const icons = {
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8 items-stretch">
       {products.map((item, index) => (
-        <div class="group relative">
+        <div class="group relative h-full">
           <!-- Card Glow Effect -->
           <div class={`absolute -inset-0.5 bg-linear-to-r ${item.gradient} rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500`}></div>
           
