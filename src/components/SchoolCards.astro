@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import smpImage from "../assets/smp.webp";
 import smaImage from "../assets/sma.webp";
+import templatenew from "../assets/templatenew.png";
 import smkImage from "../assets/smk.webp";
 import cbt from "../assets/cbt-online.webp";
 
@@ -20,6 +21,12 @@ const schoolProducts = [
     popular: true,
   },
   {
+    name: "Paket Website SMA",
+    level: "SMA",
+    image: templatenew,
+    link: "https://template-new.pulbagrup.workers.dev/",
+  },
+  {
     name: "Paket Website SMK",
     level: "SMK",
     image: smkImage,
@@ -29,8 +36,7 @@ const schoolProducts = [
     name: "Aplikasi SAS CBT",
     level: "CBT",
     image: cbt, // Placeholder
-    link: "#",
-    comingSoon: true,
+    link: "https://goldhunter.co-id.id/",
   },
 ];
 ---
@@ -81,12 +87,13 @@ const schoolProducts = [
             >
               {/* Image Container - Aspect Video */}
               <div class="relative aspect-video overflow-hidden bg-slate-100">
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={item.image}
                   alt={item.name}
                   class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
-
+                </a>
                 {item.popular && (
                   <div class="absolute top-3 right-3">
                     <span class="px-2 py-1 bg-indigo-600 rounded text-[10px] font-black text-white uppercase tracking-wider shadow-lg">
